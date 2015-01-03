@@ -4,19 +4,12 @@
  * and open the template in the editor.
  */
 
-package chady.harb;
+package PACKAGE;
 
 /**
  *
  * @author pc
  */
-public class ChadyHarb {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class IFT215CH {
     
 }
