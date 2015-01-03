@@ -70,11 +70,11 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("First Name");
+        jLabel2.setText("First Name:");
 
-        jLabel3.setText("Last Name");
+        jLabel3.setText("Last Name:");
 
-        jLabel4.setText("Gender");
+        jLabel4.setText("Gender:");
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Male");
@@ -82,7 +82,7 @@ public class GUI extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Female");
 
-        jLabel5.setText("Date of Birth");
+        jLabel5.setText("Date of Birth:");
 
         jLabel6.setText("(Day)");
 
@@ -93,6 +93,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel9.setText("Occupation:");
 
         jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("(Month)");
 
@@ -141,7 +146,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7))
                             .addComponent(jRadioButton2))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -228,6 +233,10 @@ public class GUI extends javax.swing.JFrame {
     
                
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
