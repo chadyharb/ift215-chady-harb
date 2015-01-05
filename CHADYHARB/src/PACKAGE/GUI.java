@@ -6,6 +6,8 @@
 
 package PACKAGE;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc
@@ -17,9 +19,9 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        this.setTitle("Personal information");
+        this.setTitle("Personal Information");
         rootPane.setDefaultButton(jButton1);
-        
+        this.setLocationRelativeTo(this);
     }
 
     /**
@@ -72,7 +74,19 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel2.setText("First Name:");
 
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
+
         jLabel3.setText("Last Name:");
+
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("Gender:");
 
@@ -84,6 +98,18 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel5.setText("Date of Birth:");
 
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField3KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("(Day)");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -91,12 +117,43 @@ public class GUI extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("(Year)");
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField5KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField5KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
 
         jLabel8.setText("Nationality:");
 
         jLabel9.setText("Occupation:");
+
+        jTextField7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField7KeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +164,12 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel10.setText("(Month)");
 
+        jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField9KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -114,15 +177,11 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField7))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
@@ -155,9 +214,13 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(jLabel7)))))
                 .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField9)
+                    .addComponent(jTextField7)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,6 +323,114 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
 
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+
+char nn = evt.getKeyChar();
+if (!(Character.isDigit(nn))){
+evt.consume();// TODO add your handling code here:
+    } 
+    
+   
+
+// TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3KeyTyped
+
+    
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+
+char ne = evt.getKeyChar();
+if (!(Character.isDigit(ne))){
+evt.consume();// TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4KeyTyped
+    }
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+char ny = evt.getKeyChar();
+if (!(Character.isDigit(ny))){
+evt.consume();
+}
+// TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5KeyTyped
+    
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+char firstname = evt.getKeyChar();
+if(!(Character.isAlphabetic(firstname))){
+evt.consume();         // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1KeyTyped
+    }
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+
+     char lastname = evt.getKeyChar();
+if(!(Character.isAlphabetic(lastname))){
+evt.consume();   
+    }   
+          // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextField9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyTyped
+            char nationality = evt.getKeyChar();
+if(!(Character.isAlphabetic(nationality))){
+evt.consume();   
+    }    // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9KeyTyped
+
+    private void jTextField7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyTyped
+     char occupation = evt.getKeyChar();
+if(!(Character.isAlphabetic(occupation))){
+evt.consume();   
+    }           // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7KeyTyped
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3KeyPressed
+
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+   int day = Integer.parseInt(jTextField3.getText());
+if ((day<1)||(day>31)){
+         JOptionPane.showMessageDialog(this, "between 1 and 31!","Warning",JOptionPane.INFORMATION_MESSAGE);
+              
+}
+    
+
+
+
+// TODO add your handling code here:
+// TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3KeyReleased
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+ int day = Integer.parseInt(jTextField4.getText());
+if ((day<1)||(day>12)){
+         JOptionPane.showMessageDialog(this, "between 1 and 12!","Warning",JOptionPane.INFORMATION_MESSAGE);
+              
+}        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
+if(jTextField5.getText().length()>=4){
+           evt.consume();
+        int day = Integer.parseInt(jTextField5.getText().trim());
+if ((day<1900)||(day>2100)){
+         JOptionPane.showMessageDialog(this, "between 1900 and 2100!","Warning",JOptionPane.INFORMATION_MESSAGE); 
+}
+         
+// TODO add your handling code here:
+    
+    
+ 
+}   
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5KeyReleased
+
+    private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5KeyPressed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
