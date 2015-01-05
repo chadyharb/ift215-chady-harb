@@ -22,7 +22,20 @@ public class GUI extends javax.swing.JFrame {
         this.setTitle("Personal Information");
         rootPane.setDefaultButton(jButton1);
         this.setLocationRelativeTo(this);
+        jRadioButton1.setSelected(true);
+        String x = jComboBox1.getSelectedItem().toString();
+        if (x.contains("s")){
+            jRadioButton1.setSelected(false);
+            jRadioButton2.setSelected(true);
+            haha.setText("woman");
+        }
+        else{
+            jRadioButton1.setSelected(true);
+            jRadioButton2.setSelected(false);
+            haha.setText("man");
+        }
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +47,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        haha = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
@@ -58,6 +72,12 @@ public class GUI extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTextField8 = new javax.swing.JTextField();
+
+        haha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                hahaKeyTyped(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,7 +204,6 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jTextField2))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -212,7 +231,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
@@ -221,9 +240,12 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField9)
                     .addComponent(jTextField7)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -262,6 +284,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Personall Information"));
 
+        jTextField8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
@@ -298,20 +321,65 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-
+  String x = jComboBox1.getSelectedItem().toString();
+        if (x.contains("s")){
+            jRadioButton1.setSelected(false);
+            jRadioButton2.setSelected(true);
+            haha.setText("woman");
+        }
+        else{
+            jRadioButton1.setSelected(true);
+            jRadioButton2.setSelected(false);
+            haha.setText("man");
+        }
+    
     
                
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+String x = jComboBox1.getSelectedItem().toString();
+String y = jTextField1.getText();
+String z = jTextField2.getText();
+String o = jTextField9.getText();
+String p = jTextField7.getText();
+String a = jTextField3.getText();
+String b = jTextField4.getText();
+String c = jTextField5.getText();
+String t = haha.getText();
+ 
+
+        
+
+
+
+
+jTextField8.setText("Hi, I am " + x + " " + y + " " + z + "." 
+        + "" 
+        + "I am a" +
+        " years old" + " " + t + " from " + o + "." + "\n I work as a " + p );
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -430,6 +498,10 @@ if ((day<1900)||(day>2100)){
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void hahaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hahaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hahaKeyTyped
+
     
     /**
      * @param args the command line arguments
@@ -468,6 +540,7 @@ if ((day<1900)||(day>2100)){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField haha;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
